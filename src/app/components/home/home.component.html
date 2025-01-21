@@ -1,0 +1,12 @@
+<section>
+    <form>
+      <input type="text" placeholder="Filter by city"/>
+      <button class="primary" type="button">SEARCH</button>
+    </form>
+    <section class="results">
+        <app-housing-location
+        *ngFor="let housingLocation of housingLocationList" 
+        [housingLocation]="housingLocation">
+      </app-housing-location><!--Aqui llamammos al componente houising location-->
+    </section>
+</section>
