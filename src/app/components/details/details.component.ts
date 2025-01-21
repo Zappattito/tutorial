@@ -4,7 +4,6 @@ import { HousingService } from '../housing.service';
 import { HousingLocation } from '../housing-location';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { last } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -31,10 +30,9 @@ export class DetailsComponent {
 
   onSubmit() {
     this.housingService.submitApplication(
-      this.formAngular.value.firstName ?? '',
-      this.formAngular.value.lastName ?? '',
-      this.formAngular.value.email ??''
-    )
+      { firstName: this.formAngular.value.firstName ?? '', 
+        lastName: this.formAngular.value.lastName ?? '', 
+        email: this.formAngular.value.email ?? '' }    )
 
   }
 
